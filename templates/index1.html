@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hospital or recipient</title>
+</head>
+<body style="background-image:url({{url_for('static',filename='bnew1.png')}});background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-size:cover;">
+<div style="text-align:center;">
+	<h1>Hospital Login</h1>
+	<form action="{{url_for('login')}}" method="POST">
+		<label>Hospital ID</label>
+		<input type="number" name="h_id" id="h_id" required>
+		<BR>
+		<BR>
+		<label>Password</label>
+		<input type="text" name="password" id="password" required>
+		<BR>
+		<BR>
+		<input type="Submit" value="Login">
+		<BR>
+		<BR>
+
+	</form>
+</div>
+		<div style="text-align:center;">
+<a href="/" style="color:black;" ><bold> BACK </bold></a></button>
+</div>
+</body>
+</html>
+<br>
+<br>
+
+{% block content %}
+{% with msg = get_flashed_messages() %}
+{% if msg %}
+{% for m in msg %}
+	<div style="text-align: center; color: red;"><b>	{{ m }}<b>  <div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock %}

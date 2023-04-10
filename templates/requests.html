@@ -1,0 +1,57 @@
+{% block content %}
+<h1 style="text-align:center;">Requests</h1>
+<!-- {{ recording }} -->
+<div>
+{% if recording %}
+	<table cellpadding="8" cellspacing="4" style="background-color: rgb(246, 182, 162); opacity: 0.7;">
+		<tr>
+			<th>Hosp ID</th>
+			<th>Hosp Name</th>
+			<th>Hosp Needed Blood</th>
+			<th>Hosp Needed Quantity</th>
+			<th>Hosp Ph No</th>
+			<th>City Id</th>
+			<th>Manager Id</th>
+			<th>Date Time</th>
+			
+		</tr>
+		{% for record in recording %}
+			<tr>
+				<td> {{ record[0] }} </td>
+				<td>{{ record[1] }}</td>
+				<td>{{ record[2] }}</td>
+				<td>{{ record[3] }}</td>
+				<td>{{ record[4] }}</td>
+				<td>{{ record[5] }}</td>
+				<td>{{ record[6] }}</td>
+				<td>{{ record[7] }}</td>
+
+			</tr>
+		{% endfor %}
+		
+	</table>
+{% else %}
+	<h3>No requests has been sent</h3>
+{% endif %}
+</div>
+
+<br>
+<br>
+<div style="text-align:center;">
+<a href="/bbman-after-login"> BACK </a>
+</div>
+{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Requests</title>
+</head>
+<body style="background-image:url({{url_for('static',filename='bnew1.png')}});background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-size:cover;">
+<br><br>
+<p style="text-align:center;">
+    <button class="buttons"><a href="{{ url_for('.request_report') }}">Request</a></button>
+</p>
+</body>
+</html>

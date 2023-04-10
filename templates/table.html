@@ -1,0 +1,85 @@
+{% block content %}
+<h2 style="text-align: center;">AVAILABILITY</h2>
+<!-- {{ recording }} -->
+<div>
+{% if recording %}
+	<table cellpadding="8" cellspacing="4" style="background-color: rgb(246, 182, 162); opacity: 0.7;">
+		<tr>
+			
+			<th>Blood Group</th>
+			<th>Manager City Id</th>
+			<th>Packets Available</th>
+			<th>Manager ID</th>
+			<th>Manager Name</th>
+			<th>Manager Email</th>
+			<th>Manager Ph NO</th>
+		</tr>
+		{% for record in recording %}
+			<tr>
+				<td> {{ record[0] }} </td>
+				<td>{{ record[1] }}</td>
+				<td>{{ record[2] }}</td>
+				<td>{{ record[3] }}</td>
+				<td>{{ record[4] }}</td>
+				<td>{{ record[5] }}</td>
+				<td>{{ record[6] }}</td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+{% else %}
+	<h3>Blood of particular Group is not there in this particular city</h3>
+{% endif %}
+</div>
+<BR>
+
+<BR>
+<div style="text-align:center;">
+	<button class="buttons">
+<a href="/hospital-requesting-form"> Send Request </a></button>
+</div>
+<BR>
+<div style="text-align:center;">
+	<button class="buttons">
+<a href="/searchbyhosp"> BACK </a></button>
+</div>
+<BR>
+
+{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HOSPITAL SEARCH</title>
+	<style>
+.buttons {
+  background-color: rgb(131, 212, 250 );
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.buttons:hover{
+  background-color: rgb(7, 173, 250 );
+  border: none;
+  color: white;
+  padding: 17px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body style="background-image:url({{url_for('static',filename='bnew1.png')}});background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-size:cover;">
+
+</body>
+</html>

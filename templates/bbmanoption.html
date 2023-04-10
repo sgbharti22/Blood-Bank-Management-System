@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Manager Options</title>
+	<style>
+.buttons {
+  background-color: rgb(138, 245, 216 );
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.buttons:hover{
+  background-color: rgb(29, 248, 205);
+  border: none;
+  color: white;
+  padding: 17px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body style="background-image:url({{url_for('static',filename='bnew1.png')}});background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-size:cover;">
+<div style="text-align:center;">
+	<h2 style="color:black;">Welcome Manager</h2>
+	<br><br>
+  <h3>“Give To People From What God Has Provided You. It Will Surely Come Back To You With Greater Value.”</h3>
+	<button class="buttons">
+<a href="{{ url_for('inserting') }}">Add Blood</a></button>
+<br>
+<br>
+<button class="buttons">
+<a href="{{ url_for('requesting') }}"> Request</a></button>
+<br>
+<br>
+<button class="buttons">
+<a href="{{ url_for('totalbldspce') }}"> Blood Data</a></button>
+<br><br>
+    <div style="text-align:center;">
+<a href="/bbmanlogin" style="color:black;" ><bold> BACK </bold></a></button>
+</div>
+
+</div>
+</body>
+</html>
